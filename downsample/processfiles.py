@@ -1,14 +1,14 @@
 import sys
-import pandas as pd
 import os
+here = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(here, "dependancies"))
+
+import pandas as pd
 from datetime import datetime, timedelta
-import numpy as np
-import boto3
 from io import BytesIO
 from uuid import uuid4
 
-here = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(here, "dependancies"))
+
 df_options = {}  # for keyword arguments into pd.read_csv
 downsample_rate = 3
 s3 = boto3.client('s3')
