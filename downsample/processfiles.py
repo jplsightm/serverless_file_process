@@ -2,7 +2,7 @@ import sys
 import os
 here = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(here, "dependancies"))
-
+import numpy
 import pandas as pd
 from datetime import datetime, timedelta
 from io import BytesIO
@@ -12,8 +12,8 @@ from uuid import uuid4
 df_options = {}  # for keyword arguments into pd.read_csv
 downsample_rate = 3
 s3 = boto3.client('s3')
-write_bucket = ''
-prefix = ''
+write_bucket = 'csv-data-ec4c7769d5cf4dbd8a115367c2afde3a'
+prefix = 'test-input'
 
 def downsample(event, context):
     """
